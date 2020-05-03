@@ -1,0 +1,55 @@
+.scroll{
+  overflow:scroll; 
+  /* overflow:hidden; */
+  height:500px;
+  widows:1000px;
+  border:2px;
+  /* opacity: 0.8; */
+  
+}
+.card{
+  opacity:none;
+}
+.scroll::-webkit-scrollbar{
+    display:none;
+}
+.sticky{
+  position:-webkit-sticky;
+  position: sticky;
+  top:0;
+  padding: 0px;
+  background-color: darkblue;
+  z-index: 1;
+}
+.img{
+  position:float-left;
+}
+.bg{
+  background: url("src\assets\images\Logo3.png");
+  height: auto;
+}
+
+.btn-change1{
+  height: 40px;
+  width: 120px;
+  /* padding: 10px; */
+  
+
+  /* margin: 15px; */
+  /* float: left; */
+  /* box-shadow: 0 0 1px #ccc; */
+  -webkit-transition: all 0.5s ease-in-out;
+  text-decoration: blanchedalmond;
+  color: rgb(5, 5, 5);
+  background: rgb(230, 238, 237);
+}
+.btn-change1:hover{
+  -webkit-transform: scale(1.25);
+ 
+
+  
+  background: rgb(32, 37, 37);
+  color: rgb(230, 238, 237);
+
+  /* background: #2f3031; */
+}

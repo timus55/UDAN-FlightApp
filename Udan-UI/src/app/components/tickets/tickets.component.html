@@ -1,0 +1,155 @@
+<div class="sticky">
+    <app-navbar></app-navbar>
+</div>
+<div class="row ">
+    <div class="col-6 offset-3 bg-secondary text-light" style="text-align: center;">
+        <h1>Ticket DETAILS</h1>
+    </div>
+</div>
+<br>
+<!-- <div class="form-group" style="margin-top:5%">
+    <label for="firstName" class="text-primary font-weight-bold">
+        Search By Source :
+    </label>
+    <input type="text" class="form-control" [(ngModel)]="searchText" />
+    <br />
+    <h6>Searching For {{ searchText }}</h6>
+</div> -->
+<br>
+<div class="">
+    <div class="col-8 offset-2 scroll border border-dark bg-dark rounded border-padding-10">
+        <br>
+        <div *ngIf="tickets.length==0">
+            <h3 class="text-center text-light">
+                <br><br><br><br><br>You have not booked any <br>Flights..!<br><br>Book Now to Njoy Our Services<br><br>
+                <a routerLink="/flights" class="btn btn-change1" style="height: 60px;
+                width: 150px;">Book Flights Now</a>
+            </h3>
+        </div>
+        <div class="row " *ngFor="let ticket of tickets">
+
+            <div class="card bg-light col-7" style="margin-bottom: 50px;">
+                <div class="row">
+                    <div class="col-12 bg-dark text-light" style="text-align: center">
+
+                        <h5><strong>
+                                <img src="assets\images\Logo3.png" style="border-radius: 0%; padding: 5px;" height="25"
+                                    width="50" alt="Udan Logo">AIR TICKET
+                            </strong>
+                        </h5>
+                    </div>
+                    <hr />
+                </div>
+
+                <div class="row bg">
+                    <div class="col-12 text-dark">
+                        <div class="row">
+                            <div class="col-4">
+                                NAME :<br>
+                                {{ticket.user.name}}
+                            </div>
+                            <div class="col-4">
+                                DATE:<br>
+                                {{ticket.flightData.flightDate}}
+                            </div>
+                            <div class="col-3">
+                                TIME:<br>
+                                {{ticket.flightData.departureTime}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-4">
+                                FROM:<br>
+                                {{ticket.flightData.source}}
+                            </div>
+                            <div class="col-4">
+                                FARE<br>
+                                {{ticket.flightData.totalFare}}
+                            </div>
+                            <div class="col-3">
+                                Bookig Id :<br> {{ticket.bookingId}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-4">
+                                DESTINATION:<br>
+                                {{ticket.flightData.destination}}
+                            </div>
+                            <div class="col-4">
+                                FLIGHT ID:<br>
+                                {{ticket.flightData.flightId}}
+                            </div>
+                            <div class="col-3">
+                                CLASS:<br>
+                                ECONOMY
+                            </div>
+                            <div class="col-3">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="card bg-secondary col-5 text-light" style="margin-bottom: 50px;">
+                <div class="row">
+                    <div class="col-12 bg-dark text-light" style="text-align: center">
+                        <h5><strong>BOARDING TICKET</strong></h5>
+                    </div>
+                    <hr />
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-12 text-light">
+                        <div class="row">
+                            <div class="col-7">
+                                <div class="row">
+                                    <div class="col-12">
+                                        NAME : {{ticket.user.name}}
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12">
+                                        FROM :{{ticket.flightData.source}}
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12">
+                                        TO : {{ticket.flightData.destination}}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <button class="btn btn-change1" (click)="cancel(ticket.bookingId)">Cancel</button>
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col-7">
+                                DATE : {{ticket.flightData.flightDate}}
+                            </div>
+                            <div class="col-5">
+                                TIME : {{ticket.flightData.departureTime}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-7">
+                                FARE : {{ticket.flightData.totalFare}}
+                            </div>
+                            <div class="col-5">
+                                Bookig Id : {{ticket.bookingId}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br><br><br>
+</div>
+<app-footer></app-footer>

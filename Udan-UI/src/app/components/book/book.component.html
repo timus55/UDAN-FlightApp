@@ -1,0 +1,68 @@
+<app-navbar></app-navbar>
+<div class="row ">
+    <div class="col-6 offset-3 bg-secondary text-light" style="text-align: center;">
+        <h1>BOOK FLIGHT NOW</h1>
+    </div>
+</div>
+<br><br><br><br>
+<div class="row">
+    <div class="col-4 offset-1">
+        <!-- <ng-container"> -->
+        <div class="row">
+            <div class="card bg-light col-12  ">
+
+                <div class="col-8 offset-2 text-dark" style="text-align: left">
+                    <strong>Note Following Details</strong>
+                    <hr />
+                    Airline : MYFLIGHT<br />
+                    FairType : Refundable<br />
+                    Cancelation : 39₹<br />
+                    SEATS & BAGGAGE:EXTRA CHARGE<br />
+                    INFLIGHT FEATURES:AVAILABLE<br />
+                    TAXES & FEES:18% GST<br />
+
+                    <br><br>
+                </div>
+
+            </div>
+            <div class="card bg-dark col-12">
+                <br>
+                <div class="col-12 text-light ">
+                    <div class="row" style="text-align: center;">
+                        <div class="col-12">
+                            <h1><strong>{{flight.source}} TO {{flight.destination}}</strong></h1>
+                        </div><br /><br /><br />
+                        <div class="col-12">
+                            <h3><strong>Seats Available: {{flight.availableSeats}}</strong></h3><br>
+                            <h3><strong>Total Cost : {{flight.totalFare}}</strong></h3>
+                        </div><br /><br /><br />
+                        <div class="col-12">
+                            <br>
+                            <button class="btn btn-change1" (click)="paynow()" *ngIf="paymentStatus" style="margin-bottom: 20px;">Make
+                                Payment</button>
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- </ng-container> -->
+    </div>
+    <div class="col-6 offset-1 ">
+        <div class="row" *ngIf="bookStatus" style="padding: 10%;">
+            <div class="card bg-dark" style="height: 350px; width: 500px;">
+                <div class="card-Title text-center text-light"style="padding: 20px;">
+                    <h3>Your Payment is Successfull ..!</h3>
+                </div>
+                <div class="card-body bg-secondary  text-center text-light">
+                    <br><h1><strong>BOOKING ID <br>{{bookId}}</strong></h1>
+                    <br><br>
+                    <a routerLink="/tickets" class="btn btn-change1" style="margin-bottom: 20px; height: 50px;
+                    width: 250px;">View Bookings</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-footer></app-footer>

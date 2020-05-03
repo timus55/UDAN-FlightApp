@@ -1,0 +1,51 @@
+/* .bg{
+  background: url("src\assets\images\PP1.jpg")no-repeat center center;
+  background-size: cover;
+  height: 890px;
+} */
+.required {
+  color: rgb(250, 169, 169);
+  font-size: large;
+  
+}
+.bg{
+  background: url("src\assets\images\back.jpg")no-repeat center center;
+  background-size: cover;
+  height: 100vh;
+}
+
+.bg2{
+  background: rgba(10, 10, 10,0.4);
+  background-size: cover;
+  height: 100vh;
+}
+.text-danger{
+  background-color: rgba(218, 218, 218, 0.973);
+}
+.card{
+  border-radius: 5%;
+  opacity:0.9;
+}
+
+.btn-change1{
+  height: 50px;
+  width: 150px;
+  padding: 10px;
+  background: rgb(32, 37, 37);
+
+  margin: 15px;
+  /* float: left; */
+  /* box-shadow: 0 0 1px #ccc; */
+  -webkit-transition: all 0.5s ease-in-out;
+  text-decoration: blanchedalmond;
+  color: rgb(230, 238, 237);
+
+}
+.btn-change1:hover{
+  -webkit-transform: scale(1.1);
+  color: rgb(5, 5, 5);
+
+  background: rgb(184, 243, 236);
+
+  /* background: #2f3031; */
+}

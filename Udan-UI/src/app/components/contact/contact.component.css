@@ -1,0 +1,42 @@
+.bg{
+    background: url("src\assets\images\back.jpg")no-repeat center center;
+    background-size: cover;
+    height: 90vh;
+  }
+  
+  .bg2{
+    background: rgba(10, 10, 10,0.4);
+    background-size: cover;
+    height:90vh;
+  }
+
+  .fas{
+      color: white;
+  }
+
+  .bg3{
+    background: rgba(10, 10, 10,0.7);
+  }
+
+  .btn-change1{
+    height: 50px;
+    width: 150px;
+    padding: 10px;
+    background: rgb(89, 100, 100);
+  
+    margin: 15px;
+    /* float: left; */
+    /* box-shadow: 0 0 1px #ccc; */
+    -webkit-transition: all 0.5s ease-in-out;
+    text-decoration: blanchedalmond;
+    color: rgb(230, 238, 237);
+  
+  }
+  .btn-change1:hover{
+    -webkit-transform: scale(1.1);
+    color: rgb(5, 5, 5);
+  
+    background: rgb(184, 243, 236);
+  
+    /* background: #2f3031; */
+  }

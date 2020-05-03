@@ -1,0 +1,56 @@
+.logo {
+    height: 890px;
+    width: auto;
+    display: block;
+    margin: 0 auto;
+    background:url('src\assets\images\PP1.jpg') no-repeat center center;
+}
+
+.required {
+  color: rgb(250, 194, 194);
+  font-size: large;
+  
+}
+
+.bg2{
+  background: rgba(10, 10, 10,0.5);
+  background-size: cover;
+  height: 100vh;
+}
+.bg{
+  background: url("src\assets\images\back.jpg")no-repeat center center;
+  background-size: cover;
+  height: 100vh;
+}
+
+.text-danger{
+  background-color: rgba(218, 218, 218, 0.973);
+}
+.card{
+  opacity: 0.9;
+  border-radius: 5%;
+  
+}
+
+.btn-change1{
+  height: 50px;
+  width: 150px;
+  padding: 10px;
+  background: rgb(21, 24, 24);
+
+  margin: 15px;
+  /* float: left; */
+  /* box-shadow: 0 0 1px #ccc; */
+  -webkit-transition: all 0.5s ease-in-out;
+  text-decoration: rgb(250, 249, 248);
+  color: rgb(230, 238, 237);
+
+}
+.btn-change1:hover{
+  -webkit-transform: scale(1.1);
+  color: rgb(5, 5, 5);
+
+  background: rgb(225, 252, 249);
+
+  /* background: #2f3031; */
+}

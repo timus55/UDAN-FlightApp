@@ -1,0 +1,157 @@
+<div class="sticky">
+    <app-navbar></app-navbar>
+</div>
+<div class="container-fluid" style="padding-left: 350px; padding-right: 350px; margin-top: 95px;">
+    <div class="bg-dark">
+        <br><br>
+        <h2 class="text-light" style="text-align: center;"><strong>SEARCH FLIGHTS</strong></h2>
+        <br>
+
+        <div class="card bg-light col-8 offset-2">
+            <br><br>
+            <form [formGroup]="searchForm" (ngSubmit)="searchFlights()">
+                <div class="row">
+                    <div class="form-group col-6 offset-3">
+                        <label for="source"><strong>Source</strong></label>
+                        <input type="text" class="form-control" formControlName="source" placeholder="Enter source" />
+                        <div *ngIf="submitted && searchForm.controls.source.errors">
+                            <div class="text-danger" *ngIf="searchForm.controls.source.errors.required">
+                                Source is required ..!
+                            </div>
+                            <div class="text-danger" *ngIf="searchForm.controls.source.errors.pattern">
+                                Source should min 2 and max 10 characters long ..!
+                            </div>
+                        </div>
+                    </div> <!-- end of Source -->
+
+                </div>
+                <div class="row">
+                    <div class="form-group col-6 offset-3">
+                        <label for="destination"><strong>Destination:</strong> </label>
+                        <input type="text" class="form-control" formControlName="destination"
+                            placeholder="Enter destination " />
+                            <div *ngIf="submitted && searchForm.controls.destination.errors">
+                                <div class="text-danger" *ngIf="searchForm.controls.destination.errors.required">
+                                    Destination is required ..!
+                                </div>
+                                <div class="text-danger" *ngIf="searchForm.controls.destination.errors.pattern">
+                                    Destination should min 2 and max 10 characters long ..!
+                                </div>
+                            </div>
+                    </div> <!-- end of Destination -->
+
+                </div>
+                <div class="form-group text-center">
+                    <br>
+                    <button class="btn btn-change1" style="height: 60px;
+                    width: 150px;"  type="submit">Search Now</button>
+                </div>
+                <br><br>
+            </form>
+
+        </div>
+        <br><br>
+    </div>
+</div>
+<br>
+<div class="container-fluid bg-dark col-10 offset-1" style="padding-left: 150px; padding-right: 150px;">
+    <h1 class="text-light" style="text-align: center;" *ngIf="submitted"><br><strong>VEIW FLIGHTS</strong><br></h1>
+    <div *ngIf="flights.length==0 && submitted">
+        <h3 class="text-center text-light">
+            <br>No Flights available for this Route <br> Please check for other routes ..!<br></h3>
+    </div>
+    <ng-container>
+        <div class="card" style="margin-bottom: 50px; " *ngFor="let flight of flights">
+            <div class="card-header bg-secondary"></div>
+            <div class="row">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-2" style="text-align: center;">
+                            <div class="row">
+                                <div class="col" style="text-align: center;">
+                                    <strong>
+                                        <h3>Flight ID</h3>
+                                    </strong>
+                                </div>
+                            </div>
+                            <hr />
+                            <div class="row">
+                                <div class="col" style="text-align: center;">
+                                    <strong>
+                                        <h3>{{flight.flightId}}</h3>
+                                    </strong>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="row">
+                                <div class="col-3" style="text-align: center;">
+                                    <strong>
+                                        <h4>{{flight.source}} </h4>
+                                    </strong>
+                                </div>
+                                <div class="col-2" style="text-align: center;">
+                                    <strong>TO </strong>
+                                </div>
+                                <div class="col-3" style="text-align: center;">
+                                    <strong>
+                                        <h4>{{flight.destination}}</h4>
+                                    </strong>
+                                </div>
+                            </div>
+                            <hr />
+                            <div class="row">
+                                <div class="col-4">
+                                    Take off<br>
+                                    {{flight.departureTime}}
+                                </div>
+                                <div class="col-4">
+                                    DATE:<br>
+                                    {{flight.flightDate}}
+                                </div>
+                                <div class="col-4">
+                                    Cost<br>{{flight.totalFare}}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-2" style="text-align: center;">
+                            <div class="row justify-content-center">
+                                <strong>
+                                    <strong>
+                                        <h3>Seats Left </h3>
+                                    </strong>
+                                </strong>
+                            </div>
+                            <hr />
+                            <div class="row justify-content-center">
+                                <strong>
+                                    <strong>
+                                        <h3>{{flight.availableSeats}}</h3>
+                                    </strong>
+                                </strong>
+                            </div>
+                        </div>
+                        <div class="col-2" style="text-align: center;">
+                            <div class="row justify-content-center">
+                                <strong>
+                                    <strong> Total Fare<br> {{flight.totalFare}} </strong>
+                                </strong>
+                            </div>
+                            <hr />
+                            <div class="row justify-content-center">
+                                <strong>
+                                    <button class="btn btn-dark btn-change1 text-light" (click)="bookFlight(flight)">Book
+                                        Now</button>
+                                </strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-header bg-secondary"></div>
+        </div>
+    </ng-container>
+   
+</div>
+<br><br><br>
+<app-footer></app-footer>

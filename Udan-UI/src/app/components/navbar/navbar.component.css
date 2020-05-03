@@ -1,0 +1,62 @@
+.bg{
+    background-color: white;
+    background-size: cover;
+    height: 890px;
+  }
+
+  .btn-change{
+    height: 35px;
+    width: 70px;
+    font-size: larger;
+    /* background: lightseagreen; */
+    margin: 15px;
+    
+    /* box-shadow: 0 0 1px #ccc; */
+    -webkit-transition: all 0.5s ease-in-out;
+  
+    color: #fff;
+}
+.btn-change:hover{
+    -webkit-transform: scale(1.5);
+    color: #fff;
+    /* background: #2f3031; */
+}
+.btn1{
+  color:White;
+}
+
+#mySidenav a {
+  position: absolute; /* Position them relative to the browser window */
+  left: 15px; /* Position them outside of the screen */
+  transition: 0.3s; /* Add transition on hover */
+  padding: 15px; /* 15px padding */
+  width: 200px; /* Set a specific width */
+  text-decoration: none; /* Remove underline */
+  font-size: 20px; /* Increase font size */
+  color: white; /* White text color */
+  border-radius: 0 5px 5px 0; /* Rounded corners on the top right and bottom right side */
+}
+#mySidenav a:hover {
+  left: 15; /* On mouse-over, make the elements appear as they should */
+  /* right:10; */
+  
+  background-color: rgb(249, 255, 249);
+  color: black;
+}
+/* The home link: 170px from the top with a gray background */
+#home1 {
+  top: 170px;
+  background-color: rgb(78, 83, 78);
+}
+#book1 {
+  top: 230px;
+  background-color: rgb(78, 83, 78); /* Blue */
+}
+#tickets1 {
+  top: 290px;
+  background-color: rgb(78, 83, 78); /* Red */
+}
+#cancel1 {
+  top: 340px;
+  background-color: #555 /* Light Black */
+}

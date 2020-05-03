@@ -1,0 +1,86 @@
+{
+  "users": [
+    {
+      "name": "Ram",
+      "phone": 9878789132,
+      "age": 22,
+      "password": "asd",
+      "id": 1
+    },
+    {
+      "name": "Snehal",
+      "phone": 987878234,
+      "age": 22,
+      "password": "pass",
+      "id": 2
+    },
+    {
+      "name": "Sumit",
+      "phone": 9878789231,
+      "age": 23,
+      "password": "password",
+      "id": 3
+    },
+    {
+      "name": "Akash",
+      "phone": 7896541230,
+      "age": 22,
+      "password": "passs",
+      "id": 4
+    },
+    {
+      "name": "Vineet",
+      "phone": 1234567890,
+      "age": 2,
+      "password": "pass",
+      "id": 5
+    }
+  ],
+  "flights": [
+    {
+      "flightid": "1",
+      "source": "Pune",
+      "destination": "Delhi",
+      "date": "2020-04-12",
+      "dtime": "12:00:00",
+      "ltime": "3:00:00",
+      "cost": 123
+    },
+    {
+      "flightid": "2",
+      "source": "Pune",
+      "destination": "Mumbai",
+      "date": "2020-04-12",
+      "dtime": "12:00:00",
+      "ltime": "3:00:00",
+      "cost": 1230
+    },
+    {
+      "flightid": "3",
+      "source": "Pune",
+      "destination": "Mumbai",
+      "date": "2020-04-14",
+      "dtime": "03:00:00",
+      "ltime": "3:00:00",
+      "cost": 1230
+    },
+    {
+      "flightid": "4",
+      "source": "Pune",
+      "destination": "Mumbai",
+      "date": "2020-04-12",
+      "dtime": "06:00:00",
+      "ltime": "3:00:00",
+      "cost": 1230
+    },
+    {
+      "flightid": "5",
+      "source": "Pune",
+      "destination": "Delhi",
+      "date": "2020-04-12",
+      "dtime": "12:00:00",
+      "ltime": "1:00:00",
+      "cost": 123
+    }
+  ]
+}

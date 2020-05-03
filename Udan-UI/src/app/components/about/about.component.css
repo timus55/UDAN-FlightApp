@@ -1,0 +1,20 @@
+
+nav { 
+    margin:0;
+    padding: 0;
+    background-color: #254441;
+}
+.navbar .dropdown-menu a:hover {
+    color: #616161 !important;
+}
+.darken-grey-text {
+    color: #2E2E2E;
+}
+/* Navbar */
+
+/* Main */
+
+.mydiv{
+    
+    height: 60vh;
+}

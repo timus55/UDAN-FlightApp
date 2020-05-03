@@ -1,0 +1,8 @@
+.bg{
+  /* background: url("src\assets\images\PP1.jpg")no-repeat center center; */
+  /* background-color:black; */
+  background-size: cover;
+ background-repeat: no-repeat;
+ height: 100vh;
+}
+
