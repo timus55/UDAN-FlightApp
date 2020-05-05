@@ -103,8 +103,6 @@ private static Logger logger = GlobalResources.getLogger(FlightReservationSystem
 		assertEquals(true, status);
 	}
 	
-
-	
 	@Test
 	@DisplayName("Cancel Flight")
 	@Rollback(true)
@@ -126,7 +124,7 @@ private static Logger logger = GlobalResources.getLogger(FlightReservationSystem
 	}
 	
 	@Test
-	@DisplayName("Search Flight")
+	@DisplayName("View Tickets")
 	@Rollback(true)
 	public void viewTickets() {
 		
@@ -134,6 +132,5 @@ private static Logger logger = GlobalResources.getLogger(FlightReservationSystem
 		
 		assertNotNull(tickets);
 	
-	}
-	
+	}	
 }

@@ -13,7 +13,7 @@
 }
 
 .bg2{
-  background: rgba(10, 10, 10,0.5);
+  background: rgba(10, 10, 10,0.8);
   background-size: cover;
   height: 100vh;
 }
@@ -36,21 +36,21 @@
   height: 50px;
   width: 150px;
   padding: 10px;
-  background: rgb(21, 24, 24);
+  background: rgb(32, 37, 37);
 
   margin: 15px;
   /* float: left; */
   /* box-shadow: 0 0 1px #ccc; */
   -webkit-transition: all 0.5s ease-in-out;
-  text-decoration: rgb(250, 249, 248);
+  text-decoration: blanchedalmond;
   color: rgb(230, 238, 237);
 
 }
 .btn-change1:hover{
-  -webkit-transform: scale(1.1);
+  -webkit-transform: scale(1.25);
   color: rgb(5, 5, 5);
 
-  background: rgb(225, 252, 249);
+  background: rgb(230, 238, 237);
 
   /* background: #2f3031; */
 }

@@ -2,19 +2,22 @@ package com.capgemini.flightmanagement.service;
 
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
-
 import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
-import com.capgemini.flightmanagement.dao.FlightDaoImpl;
 import com.capgemini.flightmanagement.dao.UserDaoImpl;
-import com.capgemini.flightmanagement.dao.UserDaoInterface;
 import com.capgemini.flightmanagement.entity.Users;
 import com.capgemini.flightmanagement.exception.EntityNotFound;
 import com.capgemini.flightmanagement.utility.GlobalResources;
 
+
+/**
+ * 
+ * @author Sumeet Patil
+ * This is Service Class
+ *
+ */
 @Service
 @Transactional
 public class UserServiceImpl implements UserServiceInterface {
@@ -26,7 +29,13 @@ public class UserServiceImpl implements UserServiceInterface {
 
 	private Logger logger = GlobalResources.getLogger(UserServiceImpl.class);
 
-	public boolean isUsernameTaken(Users users) {
+	/**
+	 * This method checks wheter username is taken or not.
+	 * @param users
+	 * @return boolean 
+	 * 
+	 */
+	public boolean isUsernameTaken(Users users) throws EntityNotFound{
 		try {
 			String methodName = "isUsernameTaken()";
 			logger.info(methodName + " called");
@@ -36,17 +45,21 @@ public class UserServiceImpl implements UserServiceInterface {
 			String username = query.getSingleResult();
 
 			return false;
-		} catch (Exception e) {
-
-			 
+		} catch (Exception e) {			 
 			return true;
 		}
 
 	}
 
+	/*
+	 * This methods creates account of the user
+	 * @param users Instance of User class
+	 * @return boolean status
+	 * 
+	 */
 	@Transactional
 	@Override
-	public boolean registerUser(Users users) {
+	public boolean registerUser(Users users) throws EntityNotFound {
 
 		String methodName = "registerUser()";
 		logger.info(methodName + " called");
@@ -74,9 +87,16 @@ public class UserServiceImpl implements UserServiceInterface {
 			throw new EntityNotFound("Cannot Register ..!");
 		}
 	}
+	
+	/**
+	 * This method validates username and password for login into system
+	 * @param uName
+	 * @param password
+	 * @return Integer
+	 */
 
 	@Override
-	public Integer validateUser(String uName, String password) {
+	public Integer validateUser(String uName, String password) throws EntityNotFound{
 
 		String methodName = "validateUser()";
 		logger.info(methodName + " called");
@@ -92,7 +112,6 @@ public class UserServiceImpl implements UserServiceInterface {
 		} catch (Exception e) {
 			 
 			throw new EntityNotFound("User Invalid");
-//			return 0;
 		}
 	}
 

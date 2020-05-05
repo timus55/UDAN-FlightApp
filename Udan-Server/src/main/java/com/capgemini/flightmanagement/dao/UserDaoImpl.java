@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.capgemini.flightmanagement.entity.Users;
+import com.capgemini.flightmanagement.exception.EntityNotFound;
 import com.capgemini.flightmanagement.utility.GlobalResources;
 
 @Repository
@@ -18,8 +19,12 @@ public class UserDaoImpl implements UserDaoInterface {
 	
 	private Logger logger = GlobalResources.getLogger(UserDaoImpl.class);
 	
+	/**
+	 * Creates account of user
+	 * @param users Instance of Users class
+	 */
 	@Override
-	public boolean registerUser(Users users) {
+	public boolean registerUser(Users users)throws EntityNotFound {
 	
 		String methodName = "registerUser()";
 		logger.info(methodName + " called");

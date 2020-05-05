@@ -2,7 +2,6 @@ package com.capgemini.flightmanagement.dao;
 
 import com.capgemini.flightmanagement.entity.Flights;
 import com.capgemini.flightmanagement.entity.Tickets;
-import com.capgemini.flightmanagement.entity.Users;
 
 public interface FlightDaoInterface {
 

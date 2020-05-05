@@ -24,10 +24,10 @@ export class FlightService {
     return FlightService.bookflight;
   }
 
-
   getTicket(data:any){
     return this.http.get<Tickets>(`${this.baseUrl}/getBooking/${data}`);
   }
+
   bookFlight(flightid:number,userId:number){
     return this.http.get<Flights[]>(`${this.baseUrl}/bookFlight/${flightid}/${userId}`);
   }

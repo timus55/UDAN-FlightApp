@@ -3,13 +3,10 @@ package com.capgemini.flightmanagement.service;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
-
 import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
-import com.capgemini.flightmanagement.controller.FlightController;
 import com.capgemini.flightmanagement.dao.FlightDaoImpl;
 import com.capgemini.flightmanagement.entity.Flights;
 import com.capgemini.flightmanagement.entity.Tickets;
@@ -17,6 +14,12 @@ import com.capgemini.flightmanagement.entity.Users;
 import com.capgemini.flightmanagement.exception.EntityNotFound;
 import com.capgemini.flightmanagement.utility.GlobalResources;
 
+
+/**
+ * @author Sumeet Patil
+ * This is Service Layer for Flight operatons
+ *
+ */
 @Service
 @Transactional
 public class FlightServiceImpl implements FlightServiceInterface {
@@ -33,8 +36,17 @@ public class FlightServiceImpl implements FlightServiceInterface {
 	public FlightServiceImpl() {
 	}
 
+	/**
+	 * This method searches flights for particular source and destination
+	 * @param source : String
+	 * @param destination : String
+	 * @return  Flights
+	 * 
+	 */
+	
 	@Override
-	public List<Flights> searchFlight(String source, String dest) {
+	public List<Flights> searchFlight(String source, String dest) throws EntityNotFound
+	{
 
 		String methodName = "searchFlight()";
 		logger.info(methodName + " called");
@@ -53,9 +65,18 @@ public class FlightServiceImpl implements FlightServiceInterface {
 		}
 	}
 
+	/**
+	 * This method books flights for given userid and flightid
+	 * @param flightid : Integer
+	 * @param userId : Integer
+	 * @return status : Integer 
+	 * 
+	 */
+	
 	@Transactional
 	@Override
-	public Integer bookFlight(int flightid, Integer userid) {
+	public Integer bookFlight(int flightid, Integer userid)throws EntityNotFound
+	{
 
 		String methodName = "bookFlight()";
 		logger.info(methodName + " called");
@@ -106,8 +127,16 @@ public class FlightServiceImpl implements FlightServiceInterface {
 		}
 	}
 
+	/**
+	 * This method cancels boooked flight for given booking Id
+	 * @param flightid : Integer
+	 * @param userId : Integer
+	 * @return Response Entity : Integer 
+	 * 
+	 */
 	@Override
-	public boolean cancelFlight(Integer bookid) {
+	public boolean cancelFlight(Integer bookid)throws EntityNotFound
+	{
 
 		String methodName = "cancelFlight()";
 		logger.info(methodName + " called");
@@ -125,8 +154,17 @@ public class FlightServiceImpl implements FlightServiceInterface {
 
 	}
 
+	/**
+	 * This method returns all the booking for particular user
+	 * @param userId : Integer
+	 * @return Tickets : List<Tickets>
+	 * 
+	 */
+	
+	
 	@Override
-	public List<Tickets> viewTickets(int userid) {
+	public List<Tickets> viewTickets(int userid)throws EntityNotFound
+	{
 
 		String methodName = "viewTickets()";
 		logger.info(methodName + " called");
@@ -140,14 +178,21 @@ public class FlightServiceImpl implements FlightServiceInterface {
 
 		} catch (Exception e) {
 			throw new EntityNotFound("No Ticket Available");
-//			 
-//			return null;
+
 		}
 
 	}
 
+	/**
+	 * This method returns the single Booking given bookingId
+	 * @param bookId : boolean 
+	 * @return Tickets
+	 * 
+	 */
+	
 	@Override
-	public Tickets getBooking(Integer bookId) {
+	public Tickets getBooking(Integer bookId)throws EntityNotFound
+	{
 
 		String methodName = "getBooking()";
 		logger.info(methodName + " called");

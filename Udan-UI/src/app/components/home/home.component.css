@@ -23,3 +23,17 @@ ng-template{
   background-color: rgb(223, 223, 241);
   z-index: 1;
 }
+
+
+.card{
+
+  -webkit-transition: all 0.5s ease-in-out;
+ padding: 20px;
+ margin:10px
+}
+.card:hover{
+  -webkit-transform: scale(1.25);
+
+
+  /* background: #2f3031; */
+}
